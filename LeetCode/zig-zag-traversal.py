@@ -29,44 +29,45 @@ def zigZagTraversal(root):
 
     # Base case
     if root is None:
+        return
 
-        # create the two stacks to store current and nextLevel
-        currentLevel = []
-        nextLevel = []
+    # create the two stacks to store current and nextLevel
+    currentLevel = []
+    nextLevel = []
 
-        # if ltr is true, push nodes from
-        # left to right, otherwise, from
-        # right to left
-        ltr = True
+    # if ltr is true, push nodes from
+    # left to right, otherwise, from
+    # right to left
+    ltr = True
 
-        # append root to currentLevel stack
-        currentLevel.append(root)
+    # append root to currentLevel stack
+    currentLevel.append(root)
 
-        # Check if stack is empty
-        while len(currentLevel) > 0:
-            # pop from stack
-            tmp = currentLevel.pop(-1)
-            # print the data
-            print(tmp.data, " ", end='')
+    # Check if stack is empty
+    while len(currentLevel)> 0:
+        # pop from stack
+        tmp = currentLevel.pop(-1)
+        # print the data
+        print(tmp.data, " ", end='')
 
-            if ltr:
-                # if ltr is True, push left before right
-                if tmp.left:
-                    nextLevel.append(tmp.left)
-                if tmp.right:
-                    nextLevel.append(tmp.right)
-            else:
-                # else push right before left
-                if tmp.right:
-                    nextLevel.append(tmp.right)
-                if tmp.left:
-                    nextLevel.append(tmp.left)
-            if len(currentLevel) == 0:
-                # reverse ltr to push node in
-                # opposite order
-                ltr = not ltr
-                # swapping of stacks
-                currentLevel, nextLevel = nextLevel, currentLevel
+        if ltr:
+            # if ltr is True, push left before right
+            if tmp.left:
+                nextLevel.append(tmp.left)
+            if tmp.right:
+                nextLevel.append(tmp.right)
+        else:
+            # else push right before left
+            if tmp.right:
+                nextLevel.append(tmp.right)
+            if tmp.left:
+                nextLevel.append(tmp.left)
+        if len(currentLevel) == 0:
+            # reverse ltr to push node in
+            # opposite order
+            ltr = not ltr
+            # swapping of stacks
+            currentLevel, nextLevel = nextLevel, currentLevel
 
 
 if __name__ == '__main__':
