@@ -33,5 +33,19 @@ def getHeight(node):
     if node == None:
         return 0
     return 1 + max(getHeight(node.left), getHeight(node.right))
+
+
+
+# Driver code
+if __name__ == '__main__':
+
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.left = Node(4)
+    root.left.right = Node(5)
+    
+    print('The level order traversal of the tree is :')
+    levelOrderTraversal(root)
     
 
