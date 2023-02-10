@@ -1,5 +1,7 @@
 """DFS: In order Traversal of Binary Tree.
 
+(left, root, right)
+
 1. Traverse the left subtree, i.e, call Inorder(left -> right)
 2. Visit the root
 3. Traverse the right subtree, i.e, call Inorder(right -> left)

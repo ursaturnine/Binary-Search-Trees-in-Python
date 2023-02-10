@@ -1,4 +1,7 @@
 """DFS: Preorder traversal is used to create a copy of the tree.
+
+(root, left, right)
+
 Preorder traversal is also used to get prefix expressions on an 
 expression tree.
 """
